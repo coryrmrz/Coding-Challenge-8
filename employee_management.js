@@ -10,3 +10,16 @@ class Employee {
         return `${this.name} earns ${this.salary} with the position of ${this.position} in the ${this.department}`;
     }
 }
+
+//Task 2: Create a Department Class
+class Department {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    getDepartmentSalary() {
+        return this.employees.reduce((total, employee) => total + employee.salary, 0);
+    }
