@@ -7,7 +7,7 @@ class Employee {
         this.department = department;
     }
     getDetails() {
-        return `${this.name} earns ${this.salary} with the position of ${this.position} in the ${this.department}`;
+        return `${this.name} earns ${this.salary} with the position of ${this.position} in the ${this.department}.`;
     }
 }
 
@@ -29,4 +29,15 @@ calculateTotalSalaryWithBonus() {
         return total + employee.salary + (employee.bonus ? employee.bonus:0);
     }, 0);
 }
+}
+
+//Task 3: Create a Manager Class that Inherits from Employee
+class Manager extends Employee {
+    constructor(name, salary, position, department, bonus) {
+        super(name, salary, position,department);
+        this.bonus = bonus;
+    }
+    getDetails() {
+        return `${this.name} receives a bonus of ${this.bonus}.`
+    }
 }
