@@ -41,3 +41,26 @@ class Manager extends Employee {
         return `${this.name} receives a bonus of ${this.bonus}.`
     }
 }
+
+//Task 5: Create and Manage Departments and Employees
+//Create departments
+const engineering = new Department("Engineering");
+const marketing = new Department("Marketing");
+
+//Create Employees
+const alice = new Employee("Alice", 80000, "Developer", "Engineering");
+const bob = new Employee("Bob", 75000, "Designer", "Marketing");
+const charlie = new Employee("Charlie", 120000, "Engineer Manager", "Engineering", 20000);
+const diana = new Employee("Diana", 130000, "Marketing Manager", "Marketing", 25000);
+
+//Add employees to departments
+engineering.addEmployee(alice);
+engineering.addEmployee(charlie);
+marketing.addEmployee(bob);
+marketing.addEmployee(diana);
+
+//Calculate total salary for each department
+console.log(`Total salary for Engineering $${engineering.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Engineering $${engineering.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary for Marketing $${marketing.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Marketing $${marketing.calculateTotalSalaryWithBonus()}`);
